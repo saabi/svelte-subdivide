@@ -68,9 +68,10 @@ class RectData {
 }
 
 export class PaneData extends RectData {
-	constructor(id, { pos, size, prev, next }) {
+	constructor(id, { pos, size, prev, next, childProps }) {
 		super(pos, size, prev, next);
 		this.id = id;
+		this.childProps = childProps;
 	}
 
 	destroy(panes, dividers) {
@@ -86,7 +87,8 @@ export class PaneData extends RectData {
 			pos: this.pos,
 			size: this.size,
 			prev: this.prev && this.prev.id,
-			next: this.next && this.next.id
+			next: this.next && this.next.id,
+			childProps: this.childProps
 		};
 	}
 }

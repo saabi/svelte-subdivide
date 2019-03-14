@@ -79,7 +79,7 @@
 	on:mousemove="{handleMousemove}"
 >
 	<div class="inner">
-		<svelte:component this={component} {pane}/>
+		<svelte:component this={component} {pane} {...pane.childProps}/>
 	</div>
 </div>
 

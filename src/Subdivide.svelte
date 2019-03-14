@@ -77,7 +77,8 @@
 						pos: data.pos,
 						size: data.size,
 						prev: null,
-						next: null
+						next: null,
+						childProps: data.childProps
 					});
 
 					_ids.add(data.id);
