@@ -71,7 +71,7 @@ export class PaneData extends RectData {
 	constructor(id, { pos, size, prev, next, childProps }) {
 		super(pos, size, prev, next);
 		this.id = id;
-		this.childProps = childProps;
+		this.childProps = childProps; // should deep clone...
 	}
 
 	destroy(panes, dividers) {
@@ -88,7 +88,7 @@ export class PaneData extends RectData {
 			size: this.size,
 			prev: this.prev && this.prev.id,
 			next: this.next && this.next.id,
-			childProps: this.childProps
+			childProps: this.childProps // should clone or be immutable
 		};
 	}
 }

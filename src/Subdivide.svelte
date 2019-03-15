@@ -23,14 +23,16 @@
 					pos: 0,
 					size: 1,
 					prev: null,
-					next: null
+					next: null,
+					childProps: null
 				}
 			]
 		}
 	};
 
-	export let component;
 	export let layout = defaultLayout;
+	export let component;
+	export let componentProps;
 
 	export let thickness = '1px';
 	export let padding = '6px';
@@ -78,7 +80,7 @@
 						size: data.size,
 						prev: null,
 						next: null,
-						childProps: data.childProps
+						childProps: data.childProps || componentProps // TODO: should clone
 					});
 
 					_ids.add(data.id);
