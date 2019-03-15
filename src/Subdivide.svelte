@@ -103,6 +103,8 @@
 						prev: lastChild,
 						next: child
 					});
+					child.prev.next = divider;
+					child.prev = divider;
 
 					dividers.push(divider);
 				}
