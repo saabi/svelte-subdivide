@@ -20,6 +20,11 @@
 
 	let paneElement;
 
+	//$: pane.childProps = childProps;
+	function propsChanged(e) {
+		pane.childProps = e.detail;
+	}
+
 	$: {
 		if (!_keyPressed || !edge) cursor = 'default';
 
@@ -81,7 +86,7 @@
 	on:mousemove="{handleMousemove}"
 >
 	<div class="inner">
-		<svelte:component this={component} {pane} {...pane.childProps}/>
+		<svelte:component this={component} {pane} {...pane.childProps} on:propsChanged={propsChanged} />
 	</div>
 </div>
 
